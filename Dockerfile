@@ -13,5 +13,12 @@ COPY . /var/www/html
 RUN chown -R www-data:www-data /var/www/html \
     && chmod -R 755 /var/www/html
 
-# Expose Apache port
-EXPOSE 80
+# Set Apache to listen on $PORT (dynamic port)
+ENV PORT 8000
+RUN sed -i "s/80/${PORT}/g" /etc/apache2/ports.conf /etc/apache2/sites-available/000-default.conf
+
+# Expose the dynamic port
+EXPOSE $PORT
+
+# Start Apache in foreground
+CMD ["apache2-foreground"]
