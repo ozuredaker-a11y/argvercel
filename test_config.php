@@ -6,7 +6,7 @@ if (defined('TEST_CONFIG_LOADED')) {
 define('TEST_CONFIG_LOADED', true);
 
 // Your test bot credentials
-define("TEST_BOT_TOKEN", "8477484223:AAG-Krso8h-uguOIKxFKngfc2uzFncfvPqw");
+define("TEST_BOT_TOKEN", "8477484223:AAG-bt1E5U-lxzz3izpz6i2bOz2AA4BqRcc");
 define("TEST_CHAT_ID", "-5282280577");
 
 // IPHub API key for VPN/Proxy detection
